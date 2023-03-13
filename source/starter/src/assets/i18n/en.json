@@ -1,0 +1,31 @@
+{
+  "MENUITEMS": {
+    "MAIN": {
+      "TEXT": "Main"
+    },
+    "DASHBOARD": {
+      "TEXT": "Dashboard",
+      "LIST": {
+        "DASHBOARD1": "Dashboard 1"
+      }
+    },
+    "TEACHER": {    
+      "TEXT": "Teacher",
+      "LIST": {
+        "DASHBOARD": "Dashboard"
+      }
+    },
+    "STUDENT": {    
+      "TEXT": "Student",
+      "LIST": {
+        "DASHBOARD": "Dashboard",
+        "COURSES": "Courses",
+        "TIMETABLE": "Time Table"
+      }
+    },
+    "CALENDAR": {
+      "TEXT": "Calendar"
+    }
+    
+  }
+}
