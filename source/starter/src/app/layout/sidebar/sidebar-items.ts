@@ -54,18 +54,18 @@ export const ROUTES: RouteInfo[] = [
     role: ['Teacher'],
     submenu: [],
   },
-  // {
-  //   path: '/teacher/profile',
-  //   title: 'MENUITEMS.TEACHER.LIST.PROFILE',
-  //   iconType: 'material-icons-two-tone',
-  //   icon: 'user',
-  //   class: '',
-  //   groupTitle: false,
-  //   badge: '',
-  //   badgeClass: '',
-  //   role: ['Student'],
-  //   submenu: [],
-  // },
+  {
+    path: '/teacher/students',
+    title: 'MENUITEMS.TEACHER.LIST.STUDENTS',
+    iconType: 'material-icons-two-tone',
+    icon: 'people_outline',
+    class: '',
+    groupTitle: false,
+    badge: '',
+    badgeClass: '',
+    role: ['Teacher'],
+    submenu: [],
+  },
 
   // Student Modules
 

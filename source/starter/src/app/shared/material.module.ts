@@ -14,12 +14,19 @@ import { MatSlideToggleModule } from '@angular/material/slide-toggle';
 import { MatCheckboxModule } from '@angular/material/checkbox';
 import { MatTabsModule } from '@angular/material/tabs';
 import { MatExpansionModule } from '@angular/material/expansion';
+import { MatDialogModule } from '@angular/material/dialog';
+import { MatPaginatorModule } from '@angular/material/paginator';
+import { MatRadioModule } from '@angular/material/radio';
+import { MatSelectModule } from '@angular/material/select';
+import { MatSnackBarModule } from '@angular/material/snack-bar';
+import { MatSortModule } from '@angular/material/sort';
+import { MatTableModule } from '@angular/material/table';
+import { MatTableExporterModule } from 'mat-table-exporter';
+import { MatCardModule } from '@angular/material/card';
 
 const materialModules = [
   MatButtonModule,
-  MatInputModule,
   MatListModule,
-  MatIconModule,
   MatTooltipModule,
   MatExpansionModule,
   MatDatepickerModule,
@@ -29,8 +36,19 @@ const materialModules = [
   NgxMaskModule.forRoot(),
   MatButtonToggleModule,
   MatFormFieldModule,
-  MatMenuModule,
   MatSlideToggleModule,
+  MatIconModule,
+  MatTableModule,
+  MatTableExporterModule,
+  MatPaginatorModule,
+  MatInputModule,
+  MatSnackBarModule,
+  MatSelectModule,
+  MatRadioModule,
+  MatDialogModule,
+  MatMenuModule,
+  MatSortModule,
+  MatCardModule
 ];
 
 @NgModule({

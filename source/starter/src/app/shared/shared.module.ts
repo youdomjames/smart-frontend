@@ -5,9 +5,12 @@ import { RouterModule } from '@angular/router';
 
 import { MaterialModule } from './material.module';
 import { FeatherIconsModule } from './components/feather-icons/feather-icons.module';
-import { ExpansionPanelComponent } from './components/expansion-panel/expansion-panel.component'
+import { ExpansionPanelComponent } from './components/expansion-panel/expansion-panel.component';
+import { PhoneNumberPipe } from './pipes/phone-number.pipe'
 @NgModule({
-  declarations: [],
+  declarations: [
+    PhoneNumberPipe
+  ],
   imports: [
     CommonModule,
     FormsModule,
