@@ -13,7 +13,8 @@
       "TEXT": "Teacher",
       "LIST": {
         "DASHBOARD": "Dashboard",
-        "STUDENTS": "Students"
+        "STUDENTS": "Students",
+        "COURSES": "Courses"
       }
     },
     "STUDENT": {    

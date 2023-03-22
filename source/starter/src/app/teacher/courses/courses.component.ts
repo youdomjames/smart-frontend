@@ -42,7 +42,7 @@ export class CoursesComponent implements OnInit {
   breadscrums = [
     {
       title: 'Courses',
-      items: ['Student'],
+      items: ['Teacher'],
       active: 'Courses',
     },
   ];

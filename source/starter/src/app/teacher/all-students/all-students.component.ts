@@ -127,6 +127,12 @@ export class AllStudentsComponent
 
   saveScores(){
     console.log(this.studentScores);
+    this.showNotification(
+      'snackbar-success',
+      'All scores Successfully added!',
+      'bottom',
+      'center'
+    );
   }
 
   addScore(id, department, $event){

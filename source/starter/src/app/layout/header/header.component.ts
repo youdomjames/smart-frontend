@@ -34,6 +34,7 @@ export class HeaderComponent
   langStoreValue: string;
   defaultFlag: string;
   isOpenSidebar: boolean;
+  accountLink: string;
   constructor(
     @Inject(DOCUMENT) private document: Document,
     private renderer: Renderer2,
@@ -128,6 +129,7 @@ export class HeaderComponent
     } else {
       this.flagvalue = val.map((element) => element.flag);
     }
+    this.accountLink = `${this.router.url.split("/")[1]}/account`;
   }
   ngAfterViewInit() {
     // set theme on startup

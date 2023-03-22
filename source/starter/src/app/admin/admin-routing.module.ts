@@ -1,5 +1,6 @@
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
+import { ProfileComponent } from '../shared/components/profile/profile.component';
 
 const routes: Routes = [
   {
@@ -8,9 +9,8 @@ const routes: Routes = [
       import('./dashboard/dashboard.module').then((m) => m.DashboardModule),
   },
   {
-    path: 'profile',
-    loadChildren: () =>
-      import('../shared/components/profile/profile.component').then((c) => c.ProfileComponent)
+    path: 'account',
+    component: ProfileComponent
   }
 ];
 

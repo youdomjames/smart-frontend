@@ -23,6 +23,7 @@ import { MatSortModule } from '@angular/material/sort';
 import { MatTableModule } from '@angular/material/table';
 import { MatTableExporterModule } from 'mat-table-exporter';
 import { MatCardModule } from '@angular/material/card';
+import { MatProgressBarModule } from '@angular/material/progress-bar';
 
 const materialModules = [
   MatButtonModule,
@@ -41,6 +42,7 @@ const materialModules = [
   MatTableModule,
   MatTableExporterModule,
   MatPaginatorModule,
+  MatProgressBarModule,
   MatInputModule,
   MatSnackBarModule,
   MatSelectModule,
