@@ -3,10 +3,16 @@
     "MAIN": {
       "TEXT": "Main"
     },
-    "DASHBOARD": {
-      "TEXT": "Dashboard",
+    "ADMIN": {
+      "": "",
+      "TEXT": "Admin",
       "LIST": {
-        "DASHBOARD1": "Dashboard 1"
+        "DASHBOARD": "Dashboard",
+        "TEACHERS": "Teachers",
+        "STUDENTS": "Students",
+        "COURSES": "Courses",
+        "LIBRARY": "Library",
+        "TUITIONS": "Tuitions"
       }
     },
     "TEACHER": {    

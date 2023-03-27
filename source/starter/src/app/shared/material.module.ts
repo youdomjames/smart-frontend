@@ -24,6 +24,10 @@ import { MatTableModule } from '@angular/material/table';
 import { MatTableExporterModule } from 'mat-table-exporter';
 import { MatCardModule } from '@angular/material/card';
 import { MatProgressBarModule } from '@angular/material/progress-bar';
+import {MatGridListModule} from '@angular/material/grid-list';
+import { MatStepperModule } from '@angular/material/stepper';
+
+
 
 const materialModules = [
   MatButtonModule,
@@ -50,7 +54,10 @@ const materialModules = [
   MatDialogModule,
   MatMenuModule,
   MatSortModule,
-  MatCardModule
+  MatCardModule,
+  MatListModule,
+  MatGridListModule,
+  MatStepperModule
 ];
 
 @NgModule({

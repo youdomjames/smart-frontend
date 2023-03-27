@@ -1,0 +1,83 @@
+<div class="contact-details">
+    <div class="modalHeader">
+      <div class="editRowModal">
+        <div class="modalHeader clearfix">
+          <div class="modal-about contact-header">
+            <div class="contact-details-img">
+              <img [src]='teacher.img' alt="avatar">
+            </div>
+            <div class="contact-details-heading">
+              <div class="contact-details-name mb-2">
+                <span *ngIf="teacher.gender === 'female'" class="me-1">Mrs.</span>
+                <span *ngIf="teacher.gender === 'male'" class="me-1">Mr.</span>
+                {{teacher.name}}
+              </div>
+              <div class="badge col-green">{{teacher.degree}}</div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <button mat-icon-button (click)="dialogRef.close()" class="modal-close-button" aria-label="Close dialog">
+        <mat-icon>close</mat-icon>
+      </button>
+    </div>
+    <div mat-dialog-content >
+        <mat-card-title>
+            Contact Details
+        </mat-card-title>
+        
+      <mat-card-content>
+        <mat-grid-list cols="3" rowHeight="3:1">
+            <mat-grid-tile>
+                <mat-card>
+                    <mat-card-content>
+                        <div class="d-flex flex-row ">
+                            <i class="material-icons col-blue me-4">email</i>
+                            <div class="contact-detail-info"> {{teacher.email}}
+                            </div>
+                          </div>
+                    </mat-card-content>
+                </mat-card>
+            </mat-grid-tile>
+            <mat-grid-tile>
+                <mat-card>
+                    <mat-card-content>
+                        <div class="d-flex flex-row">
+                            <i class="material-icons col-purple me-4">phonelink_ring</i>
+                            <div class="contact-detail-info"> {{teacher.mobile | phoneNumber}}
+                            </div>
+                          </div>
+                    </mat-card-content>
+                </mat-card>
+            </mat-grid-tile>
+            <mat-grid-tile>
+                <mat-card>
+                    <mat-card-content>
+                        <div class="d-flex flex-row">
+                            <i class="material-icons col-indigo me-4">cake</i>
+                            <div class="contact-detail-info"> {{teacher.joiningDate | date: 'MMMM d, yyyy'}}
+                            </div>
+                          </div>
+                    </mat-card-content>
+                </mat-card>
+            </mat-grid-tile>
+          </mat-grid-list>
+          <mat-card>
+            <mat-card-content>
+                <div class="d-flex flex-row">
+                    <i class="material-icons col-orange me-4">location_on</i>
+                    <div class="contact-detail-info"> {{teacher.address | address}}
+                    </div>
+                  </div>
+            </mat-card-content>
+        </mat-card>
+      </mat-card-content>
+      </div>
+        <mat-card>
+
+              <div mat-card-content class="container mb-2">
+                <app-ngx-datatable [data]="teacher.courses" [columns]="displayedColumns" [limit]="limit" [title]="tableTitle"></app-ngx-datatable>
+              </div>
+
+          </mat-card>
+    </div>

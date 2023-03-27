@@ -1,5 +1,5 @@
 import { NgModule } from '@angular/core';
-import { CommonModule } from '@angular/common';
+import { CommonModule, CurrencyPipe, DatePipe } from '@angular/common';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { NgScrollbarModule } from 'ngx-scrollbar';
 import { ChartsModule as chartjsModule } from 'ng2-charts';
@@ -34,6 +34,7 @@ import { MaterialModule } from '../shared/material.module';
 import { FormDialogComponent } from './all-students/dialogs/form-dialog/form-dialog.component';
 import { StudentsService } from './all-students/students.service';
 import { CoursesComponent } from '../teacher/courses/courses.component';
+
 
 
 @NgModule({

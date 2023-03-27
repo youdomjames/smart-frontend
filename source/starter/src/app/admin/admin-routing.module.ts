@@ -9,6 +9,26 @@ const routes: Routes = [
       import('./dashboard/dashboard.module').then((m) => m.DashboardModule),
   },
   {
+    path: 'teachers',
+    loadChildren: () =>
+      import('./teachers/teachers.module').then((m) => m.TeachersModule),
+  },
+  // {
+  //   path: 'students',
+  //   loadChildren: () =>
+  //     import('./students/students.module').then((m) => m.StudentsModule),
+  // },
+  // {
+  //   path: 'courses',
+  //   loadChildren: () =>
+  //     import('./courses/courses.module').then((m) => m.CoursesModule),
+  // },
+  // {
+  //   path: 'library',
+  //   loadChildren: () =>
+  //     import('./library/library.module').then((m) => m.LibraryModule),
+  // },
+  {
     path: 'account',
     component: ProfileComponent
   }

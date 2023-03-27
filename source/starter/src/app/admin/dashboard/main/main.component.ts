@@ -54,7 +54,7 @@ export class MainComponent implements OnInit {
     {
       title: 'Dashboad',
       items: [],
-      active: 'Dashboard 1',
+      active: 'Dashboard',
     },
   ];
   constructor() {}
