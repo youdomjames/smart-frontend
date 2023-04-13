@@ -6,39 +6,40 @@ import {
 } from '@angular/forms';
 
 @Component({
-  selector: 'app-edit-teacher',
-  templateUrl: './edit-teacher.component.html',
-  styleUrls: ['./edit-teacher.component.sass'],
+  selector: 'app-edit-student',
+  templateUrl: './edit-student.component.html',
+  styleUrls: ['./edit-student.component.sass'],
 })
-export class EditTeacherComponent {
-  proForm: UntypedFormGroup;
+export class EditStudentComponent {
+  stdForm: UntypedFormGroup;
   formdata = {
     first: 'Pooja',
     last: 'Sarma',
-    gender: 'female',
-    mobile: '123456789',
-    password: '123',
-    conformPassword: '123',
+    rollNo: '12',
+    gender: 'male',
     email: 'test@example.com',
-    designation: 'Sr. Teacher',
-    department: 'science',
-    address: '101, Elanxa, New Yourk',
+    mobile: '123456789',
+    rDate: '2020-02-05T14:22:18Z',
+    department: 'mathematics',
+    bGroup: 'O+',
     dob: '1987-02-17T14:22:18Z',
-    education: 'M.Sc.,P.H.D.',
+    parentName: 'Sanjay Shukla',
+    parentNo: '1234567890',
+    address: '101, Elanxa, New Yourk',
     uploadFile: '',
   };
   breadscrums = [
     {
-      title: 'Edit Teacher',
-      items: ['Teacher'],
-      active: 'Edit Teacher',
+      title: 'Edit Student',
+      items: ['Student'],
+      active: 'Edit Student',
     },
   ];
   constructor(private fb: UntypedFormBuilder) {
-    this.proForm = this.createContactForm();
+    this.stdForm = this.createContactForm();
   }
   onSubmit() {
-    console.log('Form Value', this.proForm.value);
+    console.log('Form Value', this.stdForm.value);
   }
   createContactForm(): UntypedFormGroup {
     return this.fb.group({
@@ -47,19 +48,20 @@ export class EditTeacherComponent {
         [Validators.required, Validators.pattern('[a-zA-Z]+')],
       ],
       last: [this.formdata.last],
+      rollNo: [this.formdata.rollNo],
       gender: [this.formdata.gender, [Validators.required]],
       mobile: [this.formdata.mobile, [Validators.required]],
-      password: [this.formdata.password],
-      conformPassword: [this.formdata.conformPassword],
+      rDate: [this.formdata.rDate, [Validators.required]],
       email: [
         this.formdata.email,
         [Validators.required, Validators.email, Validators.minLength(5)],
       ],
-      designation: [this.formdata.designation],
       department: [this.formdata.department],
-      address: [this.formdata.address],
+      parentName: [this.formdata.parentName, [Validators.required]],
+      parentNo: [this.formdata.parentNo],
       dob: [this.formdata.dob, [Validators.required]],
-      education: [this.formdata.education],
+      bGroup: [this.formdata.bGroup],
+      address: [this.formdata.address],
       uploadFile: [this.formdata.uploadFile],
     });
   }

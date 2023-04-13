@@ -15,7 +15,6 @@
             </ng-template>
             <div class="mt-5">
               <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
-                <span class="d-flex justify-content-end">As of {{date | date}}</span>
                 <div class="card">
                   <div class="body">
                     <div class="responsive_table">
@@ -24,7 +23,7 @@
                           <div class="col-8">
                             <ul class="header-buttons-left ms-0">
                               <li class="tbl-title">
-                                <h2>Teachers</h2>
+                                <h2>All Students</h2>
                               </li>
                               <li class="tbl-search-box">
                                 <label for="search-input"><i class="material-icons search-icon">search</i></label>
@@ -100,7 +99,12 @@
                             </mat-checkbox>
                           </mat-cell>
                         </ng-container>
-
+                        <!-- ID Column -->
+                        <ng-container matColumnDef="id">
+                          <mat-header-cell *matHeaderCellDef mat-sort-header>Id
+                          </mat-header-cell>
+                          <mat-cell *matCellDef="let row">{{row.id}}</mat-cell>
+                        </ng-container>
                         <ng-container matColumnDef="img">
                           <mat-header-cell mat-header-cell *matHeaderCellDef [ngClass]="'tbl-col-width-per-6'"> Image
                           </mat-header-cell>
@@ -108,11 +112,23 @@
                               [src]="row.img" />
                           </mat-cell>
                         </ng-container>
+                        <ng-container matColumnDef="rollNo">
+                          <mat-header-cell *matHeaderCellDef mat-sort-header>Roll No
+                          </mat-header-cell>
+                          <mat-cell *matCellDef="let row" (contextmenu)="onContextMenu($event, row)"> {{row.rollNo}}
+                          </mat-cell>
+                        </ng-container>
                         <ng-container matColumnDef="name">
                           <mat-header-cell *matHeaderCellDef mat-sort-header>Name
                           </mat-header-cell>
                           <mat-cell *matCellDef="let row" (contextmenu)="onContextMenu($event, row)"> {{row.name}}
                           </mat-cell>
+                        </ng-container>
+                        <ng-container matColumnDef="department">
+                          <mat-header-cell *matHeaderCellDef mat-sort-header>Department
+                          </mat-header-cell>
+                          <mat-cell *matCellDef="let row" (contextmenu)="onContextMenu($event, row)">
+                            {{row.department}}</mat-cell>
                         </ng-container>
                         <ng-container matColumnDef="gender">
                           <mat-header-cell *matHeaderCellDef mat-sort-header> Gender
@@ -135,7 +151,7 @@
                         <ng-container matColumnDef="mobile">
                           <mat-header-cell *matHeaderCellDef mat-sort-header>Mobile
                           </mat-header-cell>
-                        <mat-cell *matCellDef="let row" (contextmenu)="onContextMenu($event, row)"> {{row.mobile | phoneNumber}}
+                          <mat-cell *matCellDef="let row" (contextmenu)="onContextMenu($event, row)"> {{row.mobile}}
                           </mat-cell>
                         </ng-container>
                         <ng-container matColumnDef="email">
@@ -145,63 +161,32 @@
                           </mat-cell>
                         </ng-container>
                         <ng-container matColumnDef="date">
-                          <mat-header-cell *matHeaderCellDef mat-sort-header>Joining Date
+                          <mat-header-cell *matHeaderCellDef mat-sort-header>Admission
+                            Date
                           </mat-header-cell>
                           <mat-cell *matCellDef="let row" (contextmenu)="onContextMenu($event, row)">
-                            {{row.joiningDate | date: 'MM/dd/yyyy'}}</mat-cell>
-                        </ng-container>
-                        <ng-container matColumnDef="salary">
-                          <mat-header-cell *matHeaderCellDef mat-sort-header>Salary
-                          </mat-header-cell>
-                          <mat-cell *matCellDef="let row" (contextmenu)="onContextMenu($event, row)"> {{row.salary | currency}}
-                          </mat-cell>
-                        </ng-container>
-                        <ng-container matColumnDef="payment-status">
-                          <mat-header-cell *matHeaderCellDef mat-sort-header class="">Payment Status
-                          </mat-header-cell>
-                          <mat-cell mat-cell *matCellDef="let row"> 
-                            <div *ngIf="row.payment_status=='paid'">
-                              <span class="material-icons col-green">
-                                {{row.payment_status}}</span>
-                            </div>
-                            <div *ngIf="row.payment_status=='unpaid'">
-                              <span class="material-icons col-red">
-                                {{row.payment_status}}</span>
-                            </div>
-                          </mat-cell>
+                            {{row.date | date: 'MM/dd/yyyy'}}</mat-cell>
                         </ng-container>
                         <!-- actions -->
                         <ng-container matColumnDef="actions">
-                          <mat-header-cell class="pr-0" *matHeaderCellDef [ngClass]="'tbl-col-width-per-6'">
+                          <mat-header-cell class="pr-0" *matHeaderCellDef>Actions
                           </mat-header-cell>
-                          <mat-cell *matCellDef="let row; let i=index;" class="pr-0 tbl-col-width-per-6">
-                            <button mat-icon-button [matMenuTriggerFor]="menu" aria-label="Example icon-button with a menu" (click)="$event.stopPropagation()">
-                              <mat-icon>more_vert</mat-icon>
+                          <mat-cell *matCellDef="let row; let i=index;" class="pr-0">
+                            <button mat-icon-button (click)="$event.stopPropagation()" (click)="editCall(row)"
+                              class="tbl-action-btn">
+                              <app-feather-icons [icon]="'edit'" [class]="'tbl-fav-edit'"></app-feather-icons>
                             </button>
-                            <mat-menu #menu="matMenu">
-                              <button mat-menu-item (click)="viewTeacher(row)">
-                                <mat-icon>remove_red_eye</mat-icon>
-                                <span>View</span>
-                              </button>
-                              <button mat-menu-item (click)="editCall(row)">
-                                <mat-icon>edit</mat-icon>
-                                <span>Edit</span>
-                              </button>
-                              <button mat-menu-item (click)="deleteItem(row)">
-                                <mat-icon>delete</mat-icon>
-                                <span>Delete</span>
-                              </button>
-                              <button mat-menu-item>
-                                <mat-icon>monetization_on</mat-icon>
-                                <span>Make a Payment</span>
-                              </button>
-                            </mat-menu>
+                            <button mat-icon-button (click)="$event.stopPropagation()" (click)="deleteItem(row)"
+                              class="tbl-action-btn">
+                              <app-feather-icons [icon]="'trash-2'" [class]="'tbl-fav-delete'"></app-feather-icons>
+                            </button>
                           </mat-cell>
                         </ng-container>
                         <mat-header-row *matHeaderRowDef="displayedColumns">
                         </mat-header-row>
                         <!-- <mat-row *matRowDef="let row; columns: displayedColumns;"></mat-row> -->
-                        <mat-row *matRowDef="let row; columns: displayedColumns;" matRipple>
+                        <mat-row *matRowDef="let row; columns: displayedColumns;" (click)="editCall(row)"
+                          [style.cursor]="'pointer'" matRipple>
                         </mat-row>
                       </mat-table>
                       <!-- Loading spinner -->

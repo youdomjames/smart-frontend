@@ -9,17 +9,17 @@
       <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12">
         <div class="card">
           <div class="header">
-            <h2>Add Teacher</h2>
+            <h2>Edit Student</h2>
 
           </div>
           <div class="body">
-            <form class="m-4" [formGroup]="proForm" (ngSubmit)="onSubmit()">
+            <form class="m-4" [formGroup]="stdForm" (ngSubmit)="onSubmit()">
               <div class="row">
                 <div class="col-xl-6 col-lg-6 col-md-12 col-sm-12 mb-2">
                   <mat-form-field class="example-full-width mb-3" appearance="outline">
                     <mat-label>First name</mat-label>
                     <input matInput formControlName="first" required>
-                    <mat-error *ngIf="proForm.get('first').hasError('required')">
+                    <mat-error *ngIf="stdForm.get('first').hasError('required')">
                       First name is required
                     </mat-error>
                   </mat-form-field>
@@ -34,6 +34,12 @@
               <div class="row">
                 <div class="col-xl-6 col-lg-6 col-md-12 col-sm-12 mb-2">
                   <mat-form-field class="example-full-width mb-3" appearance="outline">
+                    <mat-label>Roll No</mat-label>
+                    <input matInput formControlName="rollNo">
+                  </mat-form-field>
+                </div>
+                <div class="col-xl-6 col-lg-6 col-md-12 col-sm-12 mb-2">
+                  <mat-form-field class="example-full-width mb-3" appearance="outline">
                     <mat-label>Gender</mat-label>
                     <mat-select formControlName="gender" required>
                       <mat-option [value]="'male'">
@@ -46,8 +52,19 @@
                         Other
                       </mat-option>
                     </mat-select>
-                    <mat-error *ngIf="proForm.get('gender').hasError('required')">
+                    <mat-error *ngIf="stdForm.get('gender').hasError('required')">
                       Gender is required
+                    </mat-error>
+                  </mat-form-field>
+                </div>
+              </div>
+              <div class="row">
+                <div class="col-xl-6 col-lg-6 col-md-12 col-sm-12 mb-2">
+                  <mat-form-field class="example-full-width mb-3" appearance="outline">
+                    <mat-label>Email</mat-label>
+                    <input matInput formControlName="email" required>
+                    <mat-error *ngIf="stdForm.get('email').hasError('email') && stdForm.get('email').touched">
+                      Please enter a valid email address
                     </mat-error>
                   </mat-form-field>
                 </div>
@@ -61,28 +78,13 @@
               <div class="row">
                 <div class="col-xl-6 col-lg-6 col-md-12 col-sm-12 mb-2">
                   <mat-form-field class="example-full-width mb-3" appearance="outline">
-                    <mat-label>Password</mat-label>
-                    <input matInput formControlName="password" type="password" required>
-                    <mat-error *ngIf="proForm.get('password').hasError('required')">
-                      password is required
+                    <mat-label>Registration Date</mat-label>
+                    <input matInput [matDatepicker]="rpicker" formControlName="rDate" required>
+                    <mat-datepicker-toggle matSuffix [for]="rpicker"></mat-datepicker-toggle>
+                    <mat-datepicker #rpicker></mat-datepicker>
+                    <mat-error *ngIf="stdForm.get('rDate').hasError('required')">
+                      Please select date
                     </mat-error>
-                  </mat-form-field>
-                </div>
-                <div class="col-xl-6 col-lg-6 col-md-12 col-sm-12 mb-2">
-                  <mat-form-field class="example-full-width mb-3" appearance="outline">
-                    <mat-label>Re-Enter Password</mat-label>
-                    <input matInput formControlName="conformPassword" type="password" required>
-                    <mat-error *ngIf="proForm.get('conformPassword').hasError('required')">
-                      Re-Enter password is required
-                    </mat-error>
-                  </mat-form-field>
-                </div>
-              </div>
-              <div class="row">
-                <div class="col-xl-6 col-lg-6 col-md-12 col-sm-12 mb-2">
-                  <mat-form-field class="example-full-width mb-3" appearance="outline">
-                    <mat-label>Designation</mat-label>
-                    <input matInput formControlName="designation">
                   </mat-form-field>
                 </div>
                 <div class="col-xl-6 col-lg-6 col-md-12 col-sm-12 mb-2">
@@ -105,9 +107,45 @@
                         Civil
                       </mat-option>
                     </mat-select>
-                    <mat-error *ngIf="proForm.get('department').hasError('required')">
+                    <mat-error *ngIf="stdForm.get('department').hasError('required')">
                       Select Any Department
                     </mat-error>
+                  </mat-form-field>
+                </div>
+              </div>
+              <div class="row">
+                <div class="col-xl-6 col-lg-6 col-md-12 col-sm-12 mb-2">
+                  <mat-form-field class="example-full-width mb-3" appearance="outline">
+                    <mat-label>Parents name</mat-label>
+                    <input matInput formControlName="parentName" required>
+                    <mat-error *ngIf="stdForm.get('parentName').hasError('required')">
+                      Parents name is required
+                    </mat-error>
+                  </mat-form-field>
+                </div>
+                <div class="col-xl-6 col-lg-6 col-md-12 col-sm-12 mb-2">
+                  <mat-form-field class="example-full-width mb-3" appearance="outline">
+                    <mat-label>Parents Mobile Number</mat-label>
+                    <input matInput formControlName="parentNo" type="number">
+                  </mat-form-field>
+                </div>
+              </div>
+              <div class="row">
+                <div class="col-xl-6 col-lg-6 col-md-12 col-sm-12 mb-2">
+                  <mat-form-field class="example-full-width mb-3" appearance="outline">
+                    <mat-label>Date Of Birth</mat-label>
+                    <input matInput [matDatepicker]="picker" formControlName="dob" required>
+                    <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+                    <mat-datepicker #picker></mat-datepicker>
+                    <mat-error *ngIf="stdForm.get('dob').hasError('required')">
+                      Please select date
+                    </mat-error>
+                  </mat-form-field>
+                </div>
+                <div class="col-xl-6 col-lg-6 col-md-12 col-sm-12 mb-2">
+                  <mat-form-field class="example-full-width mb-3" appearance="outline">
+                    <mat-label>Blood Group</mat-label>
+                    <input matInput formControlName="bGroup">
                   </mat-form-field>
                 </div>
               </div>
@@ -120,36 +158,6 @@
                 </div>
               </div>
               <div class="row">
-                <div class="col-xl-6 col-lg-6 col-md-12 col-sm-12 mb-2">
-                  <mat-form-field class="example-full-width mb-3" appearance="outline">
-                    <mat-label>Email</mat-label>
-                    <input matInput formControlName="email" required>
-                    <mat-error *ngIf="proForm.get('email').hasError('email') && proForm.get('email').touched">
-                      Please enter a valid email address
-                    </mat-error>
-                  </mat-form-field>
-                </div>
-                <div class="col-xl-6 col-lg-6 col-md-12 col-sm-12 mb-2">
-                  <mat-form-field class="example-full-width mb-3" appearance="outline">
-                    <mat-label>Date Of Birth</mat-label>
-                    <input matInput [matDatepicker]="picker" formControlName="dob" required>
-                    <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
-                    <mat-datepicker #picker></mat-datepicker>
-                    <mat-error *ngIf="proForm.get('dob').hasError('required')">
-                      Please select date
-                    </mat-error>
-                  </mat-form-field>
-                </div>
-              </div>
-              <div class="row">
-                <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 mb-2">
-                  <mat-form-field class="example-full-width mb-3" appearance="outline">
-                    <mat-label>Education</mat-label>
-                    <textarea matInput formControlName="education"></textarea>
-                  </mat-form-field>
-                </div>
-              </div>
-              <div class="row">
                 <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 mb-5">
                   <label>Upload</label>
                   <app-file-upload formControlName="uploadFile"></app-file-upload>
@@ -157,7 +165,7 @@
               </div>
               <div class="row">
                 <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 mb-2">
-                  <button class="btn-space" [disabled]="!proForm.valid " mat-raised-button
+                  <button class="btn-space" [disabled]="!stdForm.valid " mat-raised-button
                     color="primary">Submit</button>
                   <button type="button" mat-raised-button color="warn">Cancel</button>
                 </div>
