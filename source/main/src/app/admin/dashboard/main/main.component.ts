@@ -83,9 +83,7 @@ export class MainComponent implements OnInit {
         toolbar: {
           show: false,
         },
-        foreColor: '#9aa0ac',
       },
-      colors: ['#9F8DF1', '#E79A3B'],
       dataLabels: {
         enabled: false,
       },

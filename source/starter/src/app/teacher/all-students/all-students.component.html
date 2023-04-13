@@ -1,0 +1,213 @@
+<section class="content">
+  <div class="content-block">
+    <form>
+    <div class="block-header" *ngFor="let breadscrum of breadscrums">
+      <!-- breadcrumb -->
+      <app-breadcrumb [title]="breadscrum.title" [items]="breadscrum.items" [active_item]="breadscrum.active">
+      </app-breadcrumb>
+    </div>
+    <div class="row">
+      <div class="col-md-12">
+        <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+          <div class="card">
+            <div class="body">
+              <div class="responsive_table">
+                <div class="materialTableHeader">
+                  <div class="row">
+                    <div class="col-8">
+                      <ul class="header-buttons-left ms-0">
+                        <li class="tbl-title pe-2">
+                          <h2 *ngIf="!isMultipleScoresStep">Students</h2>
+                          <h2 class="" *ngIf="isMultipleScoresStep">Adding Multiple Scores</h2>
+                        </li>
+                        <li class="tbl-search-box">
+                          <div *ngIf="!isMultipleScoresStep">
+                            <label for="search-input"><i class="material-icons search-icon">search</i></label>
+                            <input placeholder="Search" type="text" #filter class="browser-default search-field"
+                              aria-label="Search box">
+                          </div>
+                          <div mat-dialog-content class="d-flex clearfix pt-2 m-l-20" *ngIf="isMultipleScoresStep">
+                            <mat-form-field appearance="outline" class="example-full-width">
+                              <mat-label>Select a Course</mat-label>
+                              <mat-select name="food" class="mat-select" [(ngModel)]="selectedCourse" 
+                                (selectionChange)="applyFilter();examTypeActivated = true">
+                                <mat-option *ngFor="let course of courses" [value]="course">
+                                  {{course}}
+                                </mat-option>
+                              </mat-select>
+                            </mat-form-field>
+                            <mat-form-field appearance="outline" class="example-full-width ps-2" [hidden]="!examTypeActivated">
+                              <mat-label>Select Evaluation Type</mat-label>
+                              <mat-select name="food" class="mat-select" [(ngModel)]="selectedExamType"
+                                (selectionChange)="applyFilter()">
+                                <mat-option *ngFor="let type of examsType" [value]="type">
+                                  {{type}}
+                                </mat-option>
+                              </mat-select>
+                            </mat-form-field>
+                          </div>
+                        </li>
+
+
+                        <li class="tbl-header-btn" *ngIf="!isMultipleScoresStep">
+                          <div class="m-l-10" matTooltip="REFRESH">
+                            <button mat-mini-fab color="primary" (click)="refresh()">
+                              <mat-icon class="col-white">refresh</mat-icon>
+                            </button>
+                          </div>
+                        </li>
+                      </ul>
+                    </div>
+                    <div class="col-4">
+                      <ul class="tbl-export-btn">
+                        <li>
+                          <div class="export-button m-l-10" matTooltip="XLSX">
+                            <img src="assets/images/icons/xlsx.png" alt=""
+                              (click)="exporter.exportTable('xlsx', {fileName:'assets-list', sheet: 'sheet1'})" />
+                          </div>
+                        </li>
+                        <li>
+                          <div class="export-button m-l-10" matTooltip="CSV">
+                            <img src="assets/images/icons/csv.png" alt="" (click)="exporter.exportTable('csv')" />
+                          </div>
+                        </li>
+                        <li>
+                          <div class="export-button m-l-10" matTooltip="JSON">
+                            <img src="assets/images/icons/json.png" alt="" (click)="exporter.exportTable('json')" />
+                          </div>
+                        </li>
+                        <li>
+                          <div class="export-button m-l-10" matTooltip="TXT">
+                            <img src="assets/images/icons/txt.png" alt="" (click)="exporter.exportTable('txt')" />
+                          </div>
+                        </li>
+                      </ul>
+                    </div>
+                  </div>
+                </div>
+                <mat-table #table matTableExporter [dataSource]="dataSource" matSort class="mat-cell"
+                  #exporter="matTableExporter">
+                  <!--Image-->
+                  <ng-container matColumnDef="img">
+                    <mat-header-cell mat-header-cell *matHeaderCellDef [ngClass]="'tbl-col-width-per-6'"> Image
+                    </mat-header-cell>
+                    <mat-cell mat-cell *matCellDef="let row" class="table-img tbl-col-width-per-6"> <img
+                        [src]="row.img" />
+                    </mat-cell>
+                  </ng-container>
+                  <!--Name-->
+                  <ng-container matColumnDef="name">
+                    <mat-header-cell *matHeaderCellDef mat-sort-header>Name
+                    </mat-header-cell>
+                    <mat-cell *matCellDef="let row" (contextmenu)="onContextMenu($event, row)"> {{row.name}}
+                    </mat-cell>
+                  </ng-container>
+                  <ng-container matColumnDef="course">
+                    <mat-header-cell *matHeaderCellDef mat-sort-header>Course
+                    </mat-header-cell>
+                    <mat-cell *matCellDef="let row" (contextmenu)="onContextMenu($event, row)">
+                      {{row.department}}</mat-cell>
+                  </ng-container>
+                  <ng-container matColumnDef="gender">
+                    <mat-header-cell *matHeaderCellDef mat-sort-header> Gender
+                    </mat-header-cell>
+                    <mat-cell mat-cell *matCellDef="let row">
+                      <div *ngIf="row.gender=='male'">
+                        <span class="badge badge-solid-green">
+                          {{row.gender}}</span>
+                      </div>
+                      <div *ngIf="row.gender=='female'">
+                        <span class="badge badge-solid-purple">
+                          {{row.gender}}</span>
+                      </div>
+                      <div *ngIf="row.gender=='other'">
+                        <span class="badge badge-solid-orange">
+                          {{row.gender}}</span>
+                      </div>
+                    </mat-cell>
+                  </ng-container>
+                  <ng-container matColumnDef="mobile">
+                    <mat-header-cell *matHeaderCellDef mat-sort-header>Mobile
+                    </mat-header-cell>
+                    <mat-cell *matCellDef="let row" (contextmenu)="onContextMenu($event, row)"> {{row.mobile}}
+                    </mat-cell>
+                  </ng-container>
+                  <ng-container matColumnDef="email">
+                    <mat-header-cell *matHeaderCellDef mat-sort-header>Email
+                    </mat-header-cell>
+                    <mat-cell *matCellDef="let row" (contextmenu)="onContextMenu($event, row)"> {{row.email}}
+                    </mat-cell>
+                  </ng-container>
+                  <ng-container matColumnDef="performance">
+                    <mat-header-cell *matHeaderCellDef [ngClass]="'tbl-col-width-per-8'">Performance
+                    </mat-header-cell>
+                    <mat-cell *matCellDef="let row" (contextmenu)="onContextMenu($event, row)"
+                      class="tbl-col-width-per-8">
+                      <i class="material-icons col-green" *ngIf="row.performance == 1">trending_up</i>
+                      <i class="material-icons col-red" *ngIf="row.performance == 0">trending_down</i>
+                    </mat-cell>
+                  </ng-container>
+                  <!-- actions -->
+                  <ng-container matColumnDef="actions">
+                    <mat-header-cell class="pr-0" *matHeaderCellDef [ngClass]="'tbl-col-width-per-8'">Actions
+                    </mat-header-cell>
+                    <mat-cell *matCellDef="let row; let i=index;" class="pr-0 tbl-col-width-per-8">
+                      <button mat-icon-button (click)="$event.stopPropagation()" (click)="view(row)"
+                        class="tbl-action-btn">
+                        <i class="material-icons col-blue">remove_red_eye</i>
+                      </button>
+                    </mat-cell>
+                    <!--Score Input-->
+                  </ng-container>
+                  <ng-container matColumnDef="score">
+                    <mat-header-cell *matHeaderCellDef>Score
+                    </mat-header-cell>
+                    <mat-cell *matCellDef="let row" (contextmenu)="onContextMenu($event, row)">
+                      
+                        <mat-form-field class="pt-1" appearance="outline">
+                          <mat-icon matSuffix>%</mat-icon>
+                          <input matInput type="number" class="fw-bold fs-5" [disabled]="disabledInput"
+                          (change)="addScore(row.id, row.department, $event)" />
+                        </mat-form-field>
+                      
+                    </mat-cell>
+
+                  </ng-container>
+                  <mat-header-row *matHeaderRowDef="displayedColumns">
+                  </mat-header-row>
+                  <!-- <mat-row *matRowDef="let row; columns: displayedColumns;"></mat-row> -->
+                  <mat-row *matRowDef="let row; columns: displayedColumns;" matRipple>
+                  </mat-row>
+                </mat-table>
+                <!-- Loading spinner -->
+                <div *ngIf="exampleDatabase.isTblLoading" class="tbl-spinner">
+                  <mat-progress-spinner color="primary" [diameter]="40" mode="indeterminate">
+                  </mat-progress-spinner>
+                </div>
+
+                <!-- context menu end -->
+                <div *ngIf="!exampleDatabase.isTblLoading" class="no-results"
+                  [style.display]="dataSource.renderedData.length == 0 ? '' : 'none'">
+                  No results
+                </div>
+                <mat-paginator #paginator [length]="dataSource.filteredData.length" [pageIndex]="0" [pageSize]="10"
+                  [pageSizeOptions]="[5, 10, 25, 100]">
+                </mat-paginator>
+              </div>
+            </div>
+          </div>
+          <button mat-button class="w-100 fw-bold" color="primary" (click)="activateMultipleScoresLevel()"
+            *ngIf="!isMultipleScoresStep">Add Multiple Scores</button>
+          <div class="d-flex justify-content-between">
+            <button mat-raised-button color="warn" *ngIf="isMultipleScoresStep"
+              (click)="deactivateMultipleScoresLevel()">Cancel All</button>
+            <button type="submit" mat-raised-button color="primary" *ngIf="isMultipleScoresStep" (click)="saveScores()">Send All</button>
+          </div>
+        </div>
+
+      </div>
+
+    </div>
+</form>
+  </div>
+</section>

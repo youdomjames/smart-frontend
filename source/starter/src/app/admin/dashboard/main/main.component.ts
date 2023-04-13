@@ -54,15 +54,15 @@ export class MainComponent implements OnInit {
     {
       title: 'Dashboad',
       items: [],
-      active: 'Dashboard 1',
+      active: 'Dashboard',
     },
   ];
   constructor() {}
 
   ngOnInit() {
-    this.chart1();
+    // this.chart1();
     this.chart2();
-    this.chart3();
+    // this.chart3();
     this.chart4();
   }
   private chart1() {
@@ -83,9 +83,9 @@ export class MainComponent implements OnInit {
         toolbar: {
           show: false,
         },
-        foreColor: '#9aa0ac',
+        foreColor: '#9F8DF1',
       },
-      colors: ['#9F8DF1', '#E79A3B'],
+      // colors: ['#9F8DF1', '#E79A3B'],
       dataLabels: {
         enabled: false,
       },
@@ -124,38 +124,25 @@ export class MainComponent implements OnInit {
     this.barChartOptions = {
       series: [
         {
-          name: 'percent',
-          data: [5, 8, 10, 14, 9, 7, 11, 5, 9, 16, 7, 5],
+          name: 'Performance',
+          data: [50, 80, 99, 90, 70, 99, 80, 90, 60, 70, 50, 80],
         },
       ],
       chart: {
-        height: 320,
-        type: 'bar',
+        height: 400,
+        type: 'area',
+        stacked: true,
         toolbar: {
-          show: false,
+          show: true,
         },
         foreColor: '#9aa0ac',
       },
-      plotOptions: {
-        bar: {
-          dataLabels: {
-            position: 'top', // top, center, bottom
-          },
-        },
-      },
       dataLabels: {
-        enabled: true,
-        formatter: function (val) {
-          return val + '%';
-        },
-        offsetY: -20,
-        style: {
-          fontSize: '12px',
-          colors: ['#9aa0ac'],
-        },
+        enabled: false,
       },
 
       xaxis: {
+        type: "category",
         categories: [
           'Jan',
           'Feb',
@@ -171,59 +158,6 @@ export class MainComponent implements OnInit {
           'Dec',
         ],
         position: 'bottom',
-        labels: {
-          offsetY: 0,
-        },
-        axisBorder: {
-          show: false,
-        },
-        axisTicks: {
-          show: false,
-        },
-        crosshairs: {
-          fill: {
-            type: 'gradient',
-            gradient: {
-              colorFrom: '#D8E3F0',
-              colorTo: '#BED1E6',
-              stops: [0, 100],
-              opacityFrom: 0.4,
-              opacityTo: 0.5,
-            },
-          },
-        },
-        tooltip: {
-          enabled: true,
-          offsetY: -35,
-        },
-      },
-      fill: {
-        type: 'gradient',
-        colors: ['#4F86F8', '#4F86F8'],
-        gradient: {
-          shade: 'light',
-          type: 'horizontal',
-          shadeIntensity: 0.25,
-          gradientToColors: undefined,
-          inverseColors: true,
-          opacityFrom: 1,
-          opacityTo: 1,
-          stops: [50, 0, 100, 100],
-        },
-      },
-      yaxis: {
-        axisBorder: {
-          show: false,
-        },
-        axisTicks: {
-          show: false,
-        },
-        labels: {
-          show: false,
-          formatter: function (val) {
-            return val + '%';
-          },
-        },
       },
     };
   }
@@ -237,7 +171,7 @@ export class MainComponent implements OnInit {
       ],
       chart: {
         height: 350,
-        type: 'line',
+        type: 'bar',
         dropShadow: {
           enabled: true,
           color: '#000',
@@ -288,7 +222,10 @@ export class MainComponent implements OnInit {
       series2: [44, 55, 13, 43],
       chart: {
         type: 'pie',
-        height: 400,
+        toolbar: {
+          show: true
+        },
+        height: 320,
       },
       legend: {
         show: true,
@@ -308,6 +245,7 @@ export class MainComponent implements OnInit {
             },
             legend: {
               position: 'bottom',
+            
             },
           },
         },

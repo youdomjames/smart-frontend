@@ -4,175 +4,594 @@
     "img": "assets/images/user/user1.jpg",
     "gender": "male",
     "email": "test@email.com",
-    "date": "2018-02-25T14:22:18Z",
-    "department": "mathematics",
-    "mobile": "1234567890",
+    "joiningDate": "2018-02-25T14:22:18Z",
+    "courses": [
+      {
+        "img": "assets/images/user/user1.jpg",
+        "code": "ST03_FF",
+        "name": "Science",
+        "numberOfStudents": "36"
+      },
+      {
+        "img": "assets/images/user/user1.jpg",
+        "code": "MAT033_DD",
+        "name": "Mathematics",
+        "numberOfStudents": "25"
+      },
+      {
+        "img": "assets/images/user/user1.jpg",
+        "code": "CMP42_GS",
+        "name": "Computer Science",
+        "numberOfStudents": "30"
+      },
+      {
+        "img": "assets/images/user/user1.jpg",
+        "code": "ST03_FF",
+        "name": "Science",
+        "numberOfStudents": "36"
+      },
+      {
+        "img": "assets/images/user/user1.jpg",
+        "code": "MAT033_DD",
+        "name": "Mathematics",
+        "numberOfStudents": "25"
+      },
+      {
+        "img": "assets/images/user/user1.jpg",
+        "code": "CMP42_GS",
+        "name": "Computer Science",
+        "numberOfStudents": "30"
+      }
+    ],
+    "mobile": "4903300029",
     "name": "John Deo",
-    "degree": "M.Sc., PHD."
+    "degree": "M.Sc., PHD.",
+    "salary": "2000",
+    "payment_status": "unpaid",
+    "address": {
+      "street": "123 York Street",
+      "city": "Toronto",
+      "state": "Ontario",
+      "postalCode": "J0W 2J3"
+    }
   },
   {
     "id": "002",
     "img": "assets/images/user/user2.jpg",
     "gender": "female",
     "email": "test@email.com",
-    "date": "2018-02-12T14:22:18Z",
-    "department": "civil",
+    "joiningDate": "2018-02-12T14:22:18Z",
+    "courses": [
+      {
+        "img": "assets/images/user/user1.jpg",
+        "code": "ST03_FF",
+        "name": "Science",
+        "numberOfStudents": "36"
+      },
+      {
+        "img": "assets/images/user/user1.jpg",
+        "code": "MAT033_DD",
+        "name": "Mathematics",
+        "numberOfStudents": "25"
+      },
+      {
+        "img": "assets/images/user/user1.jpg",
+        "code": "CMP42_GS",
+        "name": "Computer Science",
+        "numberOfStudents": "30"
+      }
+    ],
     "mobile": "1234567890",
     "name": "Sarah Smith",
-    "degree": "M.C.A."
+    "degree": "M.C.A.",
+    "salary": "9000",
+    "payment_status": "paid",
+    "address": {
+      "street": "123 York Street",
+      "city": "Toronto",
+      "state": "Ontario",
+      "postalCode": "J0W 2J3"
+    }
   },
   {
     "id": "003",
     "img": "assets/images/user/user3.jpg",
     "gender": "male",
     "email": "test@email.com",
-    "date": "2018-02-25T14:22:18Z",
-    "department": "civil",
+    "joiningDate": "2018-02-25T14:22:18Z",
+    "courses": [
+      {
+        "img": "assets/images/user/user1.jpg",
+        "code": "ST03_FF",
+        "name": "Science",
+        "numberOfStudents": "36"
+      },
+      {
+        "img": "assets/images/user/user1.jpg",
+        "code": "MAT033_DD",
+        "name": "Mathematics",
+        "numberOfStudents": "25"
+      },
+      {
+        "img": "assets/images/user/user1.jpg",
+        "code": "CMP42_GS",
+        "name": "Computer Science",
+        "numberOfStudents": "30"
+      }
+    ],
     "mobile": "1234567890",
     "name": "John Deo",
-    "degree": "B.A.,M.A."
+    "degree": "B.A.,M.A.",
+    "salary": "6000",
+    "payment_status": "unpaid",
+    "address": {
+      "street": "123 York Street",
+      "city": "Toronto",
+      "state": "Ontario",
+      "postalCode": "J0W 2J3"
+    }
   },
   {
     "id": "004",
     "img": "assets/images/user/user4.jpg",
     "gender": "female",
     "email": "test@email.com",
-    "date": "2018-02-25T14:22:18Z",
-    "department": "mathematics",
+    "joiningDate": "2018-02-25T14:22:18Z",
+    "courses": [
+      {
+        "img": "assets/images/user/user1.jpg",
+        "code": "ST03_FF",
+        "name": "Science",
+        "numberOfStudents": "36"
+      },
+      {
+        "code": "MAT033_DD",
+        "name": "Mathematics",
+        "numberOfStudents": "25"
+      },
+      {
+        "img": "assets/images/user/user1.jpg",
+        "code": "CMP42_GS",
+        "name": "Computer Science",
+        "numberOfStudents": "30"
+      }
+    ],
     "mobile": "1234567890",
     "name": "Jay Soni",
-    "degree": "M.Com., P.H.D."
+    "degree": "M.Com., P.H.D.",
+    "salary": "2000",
+    "payment_status": "paid",
+    "address": {
+      "street": "123 York Street",
+      "city": "Toronto",
+      "state": "Ontario",
+      "postalCode": "J0W 2J3"
+    }
   },
   {
     "id": "005",
     "img": "assets/images/user/user5.jpg",
     "gender": "male",
     "email": "test@email.com",
-    "date": "2018-02-25T14:22:18Z",
-    "department": "science",
+    "joiningDate": "2018-02-25T14:22:18Z",
+    "courses": [
+      {
+        "img": "assets/images/user/user1.jpg",
+        "code": "ST03_FF",
+        "name": "Science",
+        "numberOfStudents": "36"
+      },
+      {
+        "img": "assets/images/user/user1.jpg",
+        "code": "MAT033_DD",
+        "name": "Mathematics",
+        "numberOfStudents": "25"
+      },
+      {
+        "img": "assets/images/user/user1.jpg",
+        "code": "CMP42_GS",
+        "name": "Computer Science",
+        "numberOfStudents": "30"
+      }
+    ],
     "mobile": "1234567890",
     "name": "Smita Parikh",
-    "degree": "B.C.A.,M.C.A."
+    "degree": "B.C.A.,M.C.A.",
+    "salary": "7000",
+    "payment_status": "unpaid",
+    "address": {
+      "street": "123 York Street",
+      "city": "Toronto",
+      "state": "Ontario",
+      "postalCode": "J0W 2J3"
+    }
   },
   {
     "id": "006",
     "img": "assets/images/user/user6.jpg",
     "gender": "male",
     "email": "test@email.com",
-    "date": "2018-02-25T14:22:18Z",
-    "department": "Computer",
+    "joiningDate": "2018-02-25T14:22:18Z",
+    "courses": [
+      {
+        "img": "assets/images/user/user1.jpg",
+        "code": "ST03_FF",
+        "name": "Science",
+        "numberOfStudents": "36"
+      },
+      {
+        "img": "assets/images/user/user1.jpg",
+        "code": "MAT033_DD",
+        "name": "Mathematics",
+        "numberOfStudents": "25"
+      },
+      {
+        "img": "assets/images/user/user1.jpg",
+        "code": "CMP42_GS",
+        "name": "Computer Science",
+        "numberOfStudents": "30"
+      }
+    ],
     "mobile": "1234567890",
     "name": "Pankaj Sinha",
-    "degree": "M.Com., P.H.D."
+    "degree": "M.Com., P.H.D.",
+    "salary": "2000",
+    "payment_status": "paid",
+    "address": {
+      "street": "123 York Street",
+      "city": "Toronto",
+      "state": "Ontario",
+      "postalCode": "J0W 2J3"
+    }
   },
   {
     "id": "007",
     "img": "assets/images/user/user7.jpg",
     "gender": "male",
     "email": "test@email.com",
-    "date": "2018-02-25T14:22:18Z",
-    "department": "mechanical",
+    "joiningDate": "2018-02-25T14:22:18Z",
+    "courses": [
+      {
+        "code": "ST03_FF",
+        "name": "Science",
+        "numberOfStudents": "36"
+      },
+      {
+        "code": "MAT033_DD",
+        "name": "Mathematics",
+        "numberOfStudents": "25"
+      },
+      {
+        "code": "CMP42_GS",
+        "name": "Computer Science",
+        "numberOfStudents": "30"
+      }
+    ],
     "mobile": "1234567890",
     "name": "Pankaj Sinha",
-    "degree": "M.Sc., PHD."
+    "degree": "M.Sc., PHD.",
+    "salary": "2000",
+    "payment_status": "paid",
+    "address": {
+      "street": "123 York Street",
+      "city": "Toronto",
+      "state": "Ontario",
+      "postalCode": "J0W 2J3"
+    }
   },
   {
     "id": "008",
     "img": "assets/images/user/user8.jpg",
     "gender": "female",
     "email": "test@email.com",
-    "date": "2018-02-25T14:22:18Z",
-    "department": "mathematics",
+    "joiningDate": "2018-02-25T14:22:18Z",
+    "courses": [
+      {
+        "code": "ST03_FF",
+        "name": "Science",
+        "numberOfStudents": "36"
+      },
+      {
+        "code": "MAT033_DD",
+        "name": "Mathematics",
+        "numberOfStudents": "25"
+      },
+      {
+        "code": "CMP42_GS",
+        "name": "Computer Science",
+        "numberOfStudents": "30"
+      }
+    ],
     "mobile": "1234567890",
     "name": "Jay Soni",
-    "degree": "B.B.A.,M.B.A."
+    "degree": "B.B.A.,M.B.A.",
+    "salary": "2000",
+    "payment_status": "paid",
+    "address": {
+      "street": "123 York Street",
+      "city": "Toronto",
+      "state": "Ontario",
+      "postalCode": "J0W 2J3"
+    }
   },
   {
     "id": "009",
     "img": "assets/images/user/user9.jpg",
     "gender": "female",
     "email": "test@email.com",
-    "date": "2018-02-25T14:22:18Z",
-    "department": "mathematics",
+    "joiningDate": "2018-02-25T14:22:18Z",
+    "courses": [
+      {
+        "code": "ST03_FF",
+        "name": "Science",
+        "numberOfStudents": "36"
+      },
+      {
+        "code": "MAT033_DD",
+        "name": "Mathematics",
+        "numberOfStudents": "25"
+      },
+      {
+        "code": "CMP42_GS",
+        "name": "Computer Science",
+        "numberOfStudents": "30"
+      }
+    ],
     "mobile": "1234567890",
     "name": "Smita Parikh",
-    "degree": "B.B.A.,M.B.A."
+    "degree": "B.B.A.,M.B.A.",
+    "salary": "2000",
+    "payment_status": "unpaid",
+    "address": {
+      "street": "123 York Street",
+      "city": "Toronto",
+      "state": "Ontario",
+      "postalCode": "J0W 2J3"
+    }
   },
   {
     "id": "010",
     "img": "assets/images/user/user10.jpg",
     "gender": "male",
     "email": "test@email.com",
-    "date": "2018-02-25T14:22:18Z",
-    "department": "civil",
+    "joiningDate": "2018-02-25T14:22:18Z",
+    "courses": [
+      {
+        "code": "ST03_FF",
+        "name": "Science",
+        "numberOfStudents": "36"
+      },
+      {
+        "code": "MAT033_DD",
+        "name": "Mathematics",
+        "numberOfStudents": "25"
+      },
+      {
+        "code": "CMP42_GS",
+        "name": "Computer Science",
+        "numberOfStudents": "30"
+      }
+    ],
     "mobile": "1234567890",
     "name": "Pooja Patel",
-    "degree": "M.Com., P.H.D."
+    "degree": "M.Com., P.H.D.",
+    "salary": "2000",
+    "payment_status": "paid",
+    "address": {
+      "street": "123 York Street",
+      "city": "Toronto",
+      "state": "Ontario",
+      "postalCode": "J0W 2J3"
+    }
   },
   {
     "id": "011",
     "img": "assets/images/user/user1.jpg",
     "gender": "female",
     "email": "test@email.com",
-    "date": "2018-02-25T14:22:18Z",
-    "department": "civil",
+    "joiningDate": "2018-02-25T14:22:18Z",
+    "courses": [
+      {
+        "code": "ST03_FF",
+        "name": "Science",
+        "numberOfStudents": "36"
+      },
+      {
+        "code": "MAT033_DD",
+        "name": "Mathematics",
+        "numberOfStudents": "25"
+      },
+      {
+        "code": "CMP42_GS",
+        "name": "Computer Science",
+        "numberOfStudents": "30"
+      }
+    ],
     "mobile": "1234567890",
     "name": "Jay Soni",
-    "degree": "M.Sc., PHD."
+    "degree": "M.Sc., PHD.",
+    "salary": "2000",
+    "payment_status": "paid",
+    "address": {
+      "street": "123 York Street",
+      "city": "Toronto",
+      "state": "Ontario",
+      "postalCode": "J0W 2J3"
+    }
   },
   {
     "id": "012",
     "img": "assets/images/user/user1.jpg",
-    "gender": "male",
+    "gender": "male female",
     "email": "test@email.com",
-    "date": "2018-02-25T14:22:18Z",
-    "department": "mathematics",
+    "joiningDate": "2018-02-25T14:22:18Z",
+    "courses": [
+      {
+        "code": "ST03_FF",
+        "name": "Science",
+        "numberOfStudents": "36"
+      },
+      {
+        "code": "MAT033_DD",
+        "name": "Mathematics",
+        "numberOfStudents": "25"
+      },
+      {
+        "code": "CMP42_GS",
+        "name": "Computer Science",
+        "numberOfStudents": "30"
+      }
+    ],
     "mobile": "1234567890",
     "name": "Pooja Patel",
-    "degree": "B.C.A.,M.C.A."
+    "degree": "B.C.A.,M.C.A.",
+    "salary": "2000",
+    "payment_status": "paid",
+    "address": {
+      "street": "123 York Street",
+      "city": "Toronto",
+      "state": "Ontario",
+      "postalCode": "J0W 2J3"
+    }
   },
   {
     "id": "013",
     "img": "assets/images/user/user2.jpg",
     "gender": "female",
     "email": "test@email.com",
-    "date": "2018-02-25T14:22:18Z",
-    "department": "mathematics",
+    "joiningDate": "2018-02-25T14:22:18Z",
+    "courses": [
+      {
+        "code": "ST03_FF",
+        "name": "Science",
+        "numberOfStudents": "36"
+      },
+      {
+        "code": "MAT033_DD",
+        "name": "Mathematics",
+        "numberOfStudents": "25"
+      },
+      {
+        "code": "CMP42_GS",
+        "name": "Computer Science",
+        "numberOfStudents": "30"
+      }
+    ],
     "mobile": "1234567890",
     "name": "Sarah Smith",
-    "degree": "M.C.A."
+    "degree": "M.C.A.",
+    "salary": "5000",
+    "payment_status": "paid",
+    "address": {
+      "street": "123 York Street",
+      "city": "Toronto",
+      "state": "Ontario",
+      "postalCode": "J0W 2J3"
+    }
   },
   {
     "id": "014",
     "img": "assets/images/user/user3.jpg",
     "gender": "male",
     "email": "test@email.com",
-    "date": "2018-02-25T14:22:18Z",
-    "department": "science",
+    "joiningDate": "2018-02-25T14:22:18Z",
+    "courses": [
+      {
+        "code": "ST03_FF",
+        "name": "Science",
+        "numberOfStudents": "36"
+      },
+      {
+        "code": "MAT033_DD",
+        "name": "Mathematics",
+        "numberOfStudents": "25"
+      },
+      {
+        "code": "CMP42_GS",
+        "name": "Computer Science",
+        "numberOfStudents": "30"
+      }
+    ],
     "mobile": "1234567890",
     "name": "Smita Parikh",
-    "degree": "B.A.,M.A."
+    "degree": "B.A.,M.A.",
+    "salary": "2000",
+    "payment_status": "unpaid",
+    "address": {
+      "street": "123 York Street",
+      "city": "Toronto",
+      "state": "Ontario",
+      "postalCode": "J0W 2J3"
+    }
   },
   {
     "id": "015",
     "img": "assets/images/user/user4.jpg",
     "gender": "female",
     "email": "test@email.com",
-    "date": "2018-02-25T14:22:18Z",
-    "department": "mechanical",
+    "joiningDate": "2018-02-25T14:22:18Z",
+    "courses": [
+      {
+        "code": "ST03_FF",
+        "name": "Science",
+        "numberOfStudents": "36"
+      },
+      {
+        "code": "MAT033_DD",
+        "name": "Mathematics",
+        "numberOfStudents": "25"
+      },
+      {
+        "code": "CMP42_GS",
+        "name": "Computer Science",
+        "numberOfStudents": "30"
+      }
+    ],
     "mobile": "1234567890",
     "name": "Jay Soni",
-    "degree": "B.B.A.,M.B.A."
+    "degree": "B.B.A.,M.B.A.",
+    "salary": "2000",
+    "payment_status": "paid",
+    "address": {
+      "street": "123 York Street",
+      "city": "Toronto",
+      "state": "Ontario",
+      "postalCode": "J0W 2J3"
+    }
   },
   {
     "id": "016",
     "img": "assets/images/user/user5.jpg",
     "gender": "male",
     "email": "test@email.com",
-    "date": "2018-02-25T14:22:18Z",
-    "department": "civil",
+    "joiningDate": "2018-02-25T14:22:18Z",
+    "courses": [
+      {
+        "code": "ST03_FF",
+        "name": "Science",
+        "numberOfStudents": "36"
+      },
+      {
+        "code": "MAT033_DD",
+        "name": "Mathematics",
+        "numberOfStudents": "25"
+      },
+      {
+        "code": "CMP42_GS",
+        "name": "Computer Science",
+        "numberOfStudents": "30"
+      }
+    ],
     "mobile": "1234567890",
     "name": "Pankaj Sinha",
-    "degree": "M.Com., P.H.D."
+    "degree": "M.Com., P.H.D.",
+    "salary": "10000",
+    "payment_status": "paid",
+    "address": {
+      "street": "123 York Street",
+      "city": "Toronto",
+      "state": "Ontario",
+      "postalCode": "J0W 2J3"
+    }
   }
 ]

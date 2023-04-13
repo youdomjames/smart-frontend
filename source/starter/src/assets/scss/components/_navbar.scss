@@ -7,7 +7,7 @@
   font-family: $navbar-font-family;
   @include border-radius(0);
   box-shadow: none;
-  //    @include box-shadow(0px 0px 20px 0px rgba(0,0,0,0.15));
+     @include box-shadow(0px 0px 20px 0px rgba(0,0,0,0.15));
   border: none;
   position: fixed;
   top: 0;
@@ -15,7 +15,7 @@
   z-index: 999;
   width: 100%;
   padding: 0;
-
+  background-color: #fff;
   .navbar-brand {
     @include three-dots-overflow();
   }

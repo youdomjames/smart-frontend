@@ -1,5 +1,5 @@
 import { NgModule } from '@angular/core';
-import { CommonModule } from '@angular/common';
+import { CommonModule, CurrencyPipe, DatePipe } from '@angular/common';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { NgScrollbarModule } from 'ngx-scrollbar';
 import { ChartsModule as chartjsModule } from 'ng2-charts';
@@ -29,9 +29,16 @@ import { TeacherRoutingModule } from './teacher-routing.module';
 import { DashboardComponent } from './dashboard/dashboard.component';
 import { ComponentsModule } from '../shared/components/components.module';
 import { SharedModule } from '../shared/shared.module';
+import { AllStudentsComponent } from './all-students/all-students.component';
+import { MaterialModule } from '../shared/material.module';
+import { FormDialogComponent } from './all-students/dialogs/form-dialog/form-dialog.component';
+import { StudentsService } from './all-students/students.service';
+import { CoursesComponent } from '../teacher/courses/courses.component';
+
+
 
 @NgModule({
-  declarations: [DashboardComponent],
+  declarations: [DashboardComponent, AllStudentsComponent, FormDialogComponent, CoursesComponent],
   imports: [
     CommonModule,
     TeacherRoutingModule,
@@ -42,26 +49,13 @@ import { SharedModule } from '../shared/shared.module';
     FormsModule,
     ReactiveFormsModule,
     NgScrollbarModule,
-    MatIconModule,
-    MatButtonModule,
+    MaterialModule,
     NgApexchartsModule,
-    MatTableModule,
-    MatPaginatorModule,
-    MatFormFieldModule,
-    MatInputModule,
-    MatSnackBarModule,
-    MatSelectModule,
-    MatRadioModule,
-    MatDatepickerModule,
-    MatDialogModule,
-    MatMenuModule,
-    MatSortModule,
-    MatCheckboxModule,
-    MatTooltipModule,
     OwlDateTimeModule,
     OwlNativeDateTimeModule,
     ComponentsModule,
     SharedModule,
   ],
+  providers: [StudentsService]
 })
 export class TeacherModule {}

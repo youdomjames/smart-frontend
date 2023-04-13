@@ -1,0 +1,55 @@
+
+<mat-card>
+  <div class="ngxTableHeader">
+    <ul class="header-buttons-left ms-0 mb-0">
+      <li class="dropdown">
+        <h2>{{title}}</h2>
+      </li>
+      <li class="dropdown m-l-20">
+        <label for="search-input"><i class="material-icons search-icon">search</i></label>
+        <input placeholder="Search" type="text" class="browser-default search-field"
+          (keyup)='filterDatatable($event)' aria-label="Search box">
+      </li>
+    </ul>
+    <ul class="header-buttons" *ngIf="add">
+      <li>
+        <button mat-mini-fab color="primary">
+          <mat-icon class="col-white">add</mat-icon>
+        </button>
+      </li>
+    </ul>
+  </div>
+  <div class="responsive_table">
+    <ngx-datatable #table class="material" [rows]="data" [columns]="columns" [sortType]="'multi'"
+    [columnMode]="'force'" [headerHeight]="50" [footerHeight]="50" [rowHeight]="60" [limit]="limit">
+    <!-- user image -->
+    <ngx-datatable-column name="Image" sortable="false" prop="img" [canAutoResize]="true">
+      <ng-template let-row="data" let-value="value" let-i="index" ngx-datatable-cell-template>
+        <td class="table-img padding-0">
+          <img width="40" src="{{ value }}" />
+        </td>
+      </ng-template>
+    </ngx-datatable-column>
+    <ngx-datatable-column *ngFor="let col of columns" 
+      [canAutoResize]="true" [name]="col.name" [prop]="col.prop" [pipe]="col.pipe" [cellClass]="getCellClass" [resizeable]="false">
+    </ngx-datatable-column>
+    <!-- action buttons -->
+    <ngx-datatable-column name="Actions" sortable="false" *ngIf="buttons != undefined" [canAutoResize]="true">
+      <ng-template let-value="value" let-row="row" let-rowIndex="rowIndex" ngx-datatable-cell-template>
+        <button mat-icon-button [matMenuTriggerFor]="menu" aria-label="Example icon-button with a menu" (click)="$event.stopPropagation()">
+          <mat-icon>more_vert</mat-icon>
+        </button>
+        <mat-menu #menu="matMenu" >
+          <ng-container *ngFor="let button of buttons">
+            <button mat-menu-item (click)="buttonClick(button.action, row)">
+              <mat-icon>{{button.icon}}</mat-icon>
+              <span>{{button.title}}</span>
+            </button>
+          </ng-container>                       
+        </mat-menu>
+      </ng-template>
+    </ngx-datatable-column>
+  </ngx-datatable>
+  </div>
+</mat-card>
+
